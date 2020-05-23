@@ -16,3 +16,5 @@ class TestCateforyList(TestCase):
         # Then
         self.assertContains(response, '<li>Street Food</li>')
         self.assertContains(response, '<li>Elite</li>')
+
+        assert '<li>Street Food</li>' in str(response.content)

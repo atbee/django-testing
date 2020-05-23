@@ -1,0 +1,5 @@
+.vscode
+ENV
+__pycache__
+.pytest_cache
+db.sqlite3

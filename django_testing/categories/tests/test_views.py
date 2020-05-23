@@ -1,0 +1,18 @@
+from django.test import TestCase
+from django.urls import reverse
+
+from ..models import Category
+
+
+class TestCateforyList(TestCase):
+    def test_category_list_should_display_on_page(self):
+        # Given
+        Category.objects.create(name='Street Food')
+        Category.objects.create(name='Elite')
+
+        # When
+        response = self.client.get(reverse('category_list'))
+
+        # Then
+        self.assertContains(response, '<li>Street Food</li>')
+        self.assertContains(response, '<li>Elite</li>')
